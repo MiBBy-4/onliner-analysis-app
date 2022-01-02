@@ -1,1 +1,24 @@
-@import 'bootstrap/dist/css/bootstrap'; 
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar-brand{
+  font-weight: 600;
+  font-style: italic;
+  font-size: 32px;
+  color: blue !important;
+  font-family: cursive;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background: rgb(244,244,244);
+  background: linear-gradient(180deg, rgba(244,244,244,1) 0%, rgba(233,233,233,1) 50%, rgba(215,215,215,1) 100%);  
+}
+
+nav{
+  background: transparent;
+} 
