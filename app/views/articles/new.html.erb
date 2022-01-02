@@ -1,0 +1,26 @@
+<h1 class="text-center mt-2">Анализ статьи</h1>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <%
+=begin%>
+ <%= render "shared/errors", obj: @article %> 
+<%
+=end%>
+      <%= form_with(model: @article, class: "shadow p-3 bg-info rounded",local: true) do |f| %>
+        <div class="form-group row">
+          <%= f.label "Ссылка", class: "col-2 col-form-label text-light" %>
+          <div class="col-10">
+            <%= f.text_field :url, class:"form-control shadow rounded", placeholder: "Введите ссылку" %>
+          </div>
+        </div>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto mt-3">
+          <%= f.submit class: "btn btn-outline-warning btn-lg" %>
+          <%= link_to "Go back", root_path, class: "btn btn-outline-warning btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
