@@ -1,0 +1,13 @@
+<% if obj.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">Во время сохранения произошла ошибка. <%= obj.class.name.downcase %></h4>
+    <ul>
+      <% obj.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <hr>
+    <p class="mb-0">Убедитесь, пожалуйста, что Вы их устранили.</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
