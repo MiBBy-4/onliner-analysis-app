@@ -4,8 +4,16 @@
   font-weight: 600;
   font-style: italic;
   font-size: 32px;
-  color: blue !important;
+  color: whitesmoke !important;
   font-family: cursive;
+}
+
+.nav-link{
+  color: whitesmoke !important;
+}
+
+.nav-link:hover{
+  color: gray !important;
 }
 
 html,
@@ -20,5 +28,5 @@ body {
 }
 
 nav{
-  background: transparent;
+  background: #292929;
 } 
