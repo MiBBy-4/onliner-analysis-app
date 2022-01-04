@@ -11,10 +11,14 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "Статья найдена."
-      redirect_to root_path
+      redirect_to @article
     else
       render "new"
     end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private
