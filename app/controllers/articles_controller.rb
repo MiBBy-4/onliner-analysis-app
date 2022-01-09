@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  
   def index
 
   end
@@ -18,7 +19,10 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    page = ArticlesScraper.new(Article.find(params[:id]).link)
+    @article = page.get_article
+    @comments = page.get_comments
+    # @article = Article.find(params[:id])
   end
 
   private
