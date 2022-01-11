@@ -19,7 +19,6 @@ class ArticlesScraper < ApplicationService
     @comments_url = @article_url.insert(-6, '/comments').insert(-1, '#comments')
     unparsed_comments = httparty(@comments_url)
     parsed_comments = nokogiri(unparsed_comments)
-    @comments = []
 
     comment_listings = parsed_comments.css('div.onecomm')
     comment_listings.map do |comment_listing|
