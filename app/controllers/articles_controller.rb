@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  
+  before_action :set_page_content, only: [:show]
   def index; end
 
   def new
@@ -16,12 +16,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    page = ArticlesScraper.new(find_article_link)
-    @article = page.article
-    @comments = page.comments
-    # @article = Article.find(params[:id])
-  end
+  def show; end
 
   private
 
@@ -31,5 +26,11 @@ class ArticlesController < ApplicationController
 
   def find_article_link
     Article.find(params[:id]).link
+  end
+
+  def set_page_content
+    page = ArticlesScraper.new(find_article_link)
+    @article = page.article
+    @comments = page.comments
   end
 end
