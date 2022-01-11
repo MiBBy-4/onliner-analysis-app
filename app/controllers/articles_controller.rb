@@ -17,7 +17,11 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    page = ArticlesScraper.new(set_article.link)
+    @article = page.article
+    @comments = page.comments 
+  end
 
   private
 
@@ -27,11 +31,5 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
-  end
-
-  def set_page_content
-    page = ArticlesScraper.new(set_article.link)
-    @article = page.article
-    @comments = page.comments
   end
 end
