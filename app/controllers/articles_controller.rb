@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_page_content, only: [:show]
+  before_action :set_article, only:[:show]
 
   def index; end
 
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    page = ArticlesScraper.new(set_article.link)
+    page = ArticlesScraper.new(@article.link)
     @article = page.article
     @comments = page.comments 
   end
