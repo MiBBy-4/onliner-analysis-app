@@ -17,9 +17,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    page = ArticlesScraper.new(Article.find(params[:id]).link)
-    @article = page.get_article
-    @comments = page.get_comments
+    page = ArticlesScraper.new(find_article_link)
+    @article = page.article
+    @comments = page.comments
     # @article = Article.find(params[:id])
   end
 
@@ -27,5 +27,9 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:link)
+  end
+
+  def find_article_link
+    Article.find(params[:id]).link
   end
 end
