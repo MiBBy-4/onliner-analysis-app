@@ -18,8 +18,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @page = ArticlesScraper.new(@article.link).article
-    @comments = CommentsScraper.new(@article.link).comments
+    @page = ArticlesScraper.call(@article.link)
+    @comments = CommentsScraper.call(@article.link)
   end
 
   private

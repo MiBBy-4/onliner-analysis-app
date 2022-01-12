@@ -6,7 +6,7 @@ class CommentsScraper < ScraperMethods
     @article_url = url
   end
 
-  def comments
+  def call
     @comments_url = @article_url.insert(-6, '/comments').insert(-1, '#comments')
     unparsed_comments = httparty(@comments_url)
     parsed_comments = nokogiri(unparsed_comments)
