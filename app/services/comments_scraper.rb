@@ -1,4 +1,4 @@
-class CommentsScraper < ApplicationService
+class CommentsScraper < ScraperMethods
   require 'nokogiri'
   require 'httparty'
 
@@ -19,14 +19,5 @@ class CommentsScraper < ApplicationService
         date: comment_listing.css('span.datetime').text
       }
     end
-  end
-
-  private
-  def httparty(url)
-    HTTParty.get(url)
-  end
-
-  def nokogiri(unparsed_page)
-    Nokogiri.HTML(unparsed_page)
   end
 end

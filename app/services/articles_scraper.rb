@@ -1,4 +1,4 @@
-class ArticlesScraper < ApplicationService
+class ArticlesScraper < ScraperMethods
   require 'nokogiri'
   require 'httparty'
 
@@ -13,7 +13,9 @@ class ArticlesScraper < ApplicationService
       title: parsed_article.css('h1').first.text
     }
   end
+
   private
+  
   def httparty(url)
     HTTParty.get(url)
   end
