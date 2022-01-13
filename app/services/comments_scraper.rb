@@ -1,7 +1,4 @@
-class CommentsScraper < ScraperMethods
-  require 'nokogiri'
-  require 'httparty'
-
+class CommentsScraper < HttpParseService
   def initialize(url)
     @article_url = url
   end
@@ -13,7 +10,7 @@ class CommentsScraper < ScraperMethods
 
     comment_listings = parsed_comments.css('div.onecomm')
     comment_listings.map do |comment_listing|
-      comment = {
+      {
         user_name: comment_listing.css('strong.name').text,
         comment: comment_listing.css('p.commtext').text,
         date: comment_listing.css('span.datetime').text

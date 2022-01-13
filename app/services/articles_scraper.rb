@@ -1,7 +1,4 @@
-class ArticlesScraper < ScraperMethods
-  require 'nokogiri'
-  require 'httparty'
-
+class ArticlesScraper < HttpParseService
   def initialize(url)
     @article_url = url
   end
