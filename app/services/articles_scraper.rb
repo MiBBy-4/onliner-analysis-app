@@ -6,7 +6,7 @@ class ArticlesScraper < HttpParseService
   def call
     unparsed_article = httparty(@article_url)
     parsed_article = nokogiri(unparsed_article)
-    @article = {
+    {
       title: parsed_article.css('h1').first.text
     }
   end
