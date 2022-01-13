@@ -4,6 +4,6 @@ class HttpParseService < ApplicationService
   end
 
   def nokogiri(page)
-    Nokogiri.HTML(unparsed_page)
+    Nokogiri.HTML(page)
   end
 end
