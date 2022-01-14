@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_01_03_094431) do
+=======
+ActiveRecord::Schema.define(version: 2022_01_14_134356) do
+>>>>>>> cf5b4d7 (feat: create new CreateArticle and CreateComments services for add new article with comments in db, also delete @page and @comments variables from show method in article controller, move all logic from create method in article controller to services)
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,4 +25,16 @@ ActiveRecord::Schema.define(version: 2022_01_03_094431) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
+=======
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "article_id"
+    t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  add_foreign_key "comments", "articles"
+>>>>>>> cf5b4d7 (feat: create new CreateArticle and CreateComments services for add new article with comments in db, also delete @page and @comments variables from show method in article controller, move all logic from create method in article controller to services)
 end
