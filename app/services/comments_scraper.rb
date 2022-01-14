@@ -11,9 +11,7 @@ class CommentsScraper < HttpParseService
     comment_listings = parsed_comments.css('div.onecomm')
     comment_listings.map do |comment_listing|
       {
-        user_name: comment_listing.css('strong.name').text,
-        comment: comment_listing.css('p.commtext').text,
-        date: comment_listing.css('span.datetime').text
+        content: comment_listing.css('p.commtext').text
       }
     end
   end

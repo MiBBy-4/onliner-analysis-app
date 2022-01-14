@@ -8,8 +8,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = CreateArticleService.call(article_params[:link])
     if @article.save
+      CreateCommentService.call(article_params[:link], @article[:id])
       flash[:notice] = "Article found."
       redirect_to @article
     else
@@ -17,10 +18,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    @page = ArticlesScraper.call(@article.link)
-    @comments = CommentsScraper.call(@article.link)
-  end
+  def show; end
 
   private
 
