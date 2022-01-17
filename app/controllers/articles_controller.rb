@@ -10,7 +10,6 @@ class ArticlesController < ApplicationController
   def create
     @article = CreateArticleService.call(article_params[:link])
     if @article.save
-      CreateCommentService.call(article_params[:link], @article[:id])
       flash[:notice] = "Article found."
       redirect_to @article
     else

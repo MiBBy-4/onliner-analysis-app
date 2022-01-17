@@ -4,7 +4,7 @@ class CreateArticleService < ApplicationService
   end
 
   def call
-    article = Article.new(link: @article_url, title: article_title[:title])
+    Article.new(link: @article_url, title: article_title[:title])
   end
 
   def article_title

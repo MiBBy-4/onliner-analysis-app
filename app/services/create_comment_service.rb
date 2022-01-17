@@ -1,5 +1,4 @@
 class CreateCommentService < ApplicationService
-
   def initialize(article_url, article_id)
     @article_url = article_url
     @article_id = article_id
