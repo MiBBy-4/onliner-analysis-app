@@ -26,6 +26,7 @@ gem 'validate_url'
 gem 'pry'
 gem 'nokogiri'
 gem 'httparty'
+gem 'monkeylearn'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
