@@ -1,8 +1,4 @@
 class CreateCommentService < ApplicationService
-<<<<<<< HEAD
-
-=======
->>>>>>> add_saving_all_dates_in_database
   def initialize(article_url, article_id)
     @article_url = article_url
     @article_id = article_id
