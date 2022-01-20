@@ -1,5 +1,5 @@
 class RateCommentService < ApplicationService
-  URL = "https://language.googleapis.com/v1beta2/documents:analyzeSentiment?key=AIzaSyARfeAHElRfkGkT8FXOtrVzBYNPXLG3WFY"
+  URL = "https://language.googleapis.com/v1beta2/documents:analyzeSentiment?key=#{ENV['analyze_api_key']}"
   def initialize(content)
     @content = content
   end
