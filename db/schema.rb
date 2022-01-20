@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2022_01_03_094431) do
-=======
-ActiveRecord::Schema.define(version: 2022_01_14_134356) do
->>>>>>> cf5b4d7 (feat: create new CreateArticle and CreateComments services for add new article with comments in db, also delete @page and @comments variables from show method in article controller, move all logic from create method in article controller to services)
-=======
-ActiveRecord::Schema.define(version: 2022_01_14_134356) do
->>>>>>> add_saving_all_dates_in_database
+ActiveRecord::Schema.define(version: 2022_01_20_064801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,22 +22,14 @@ ActiveRecord::Schema.define(version: 2022_01_14_134356) do
     t.string "title"
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> add_saving_all_dates_in_database
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "article_id"
+    t.integer "rate"
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   add_foreign_key "comments", "articles"
-<<<<<<< HEAD
->>>>>>> cf5b4d7 (feat: create new CreateArticle and CreateComments services for add new article with comments in db, also delete @page and @comments variables from show method in article controller, move all logic from create method in article controller to services)
-=======
->>>>>>> add_saving_all_dates_in_database
 end
