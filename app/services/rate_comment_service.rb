@@ -12,10 +12,10 @@ class RateCommentService < ApplicationService
         type: "PLAIN_TEXT"
       },
       encodingType: "NONE"
-    }
-  )
-  data_hash = JSON.parse(response.body)
-  document_sentiment = data_hash['documentSentiment']
-  document_sentiment['score'].to_f*100
+      }
+    )
+    data_hash = JSON.parse(response.body)
+    document_sentiment = data_hash['documentSentiment']
+    document_sentiment['score'].to_f*100
   end
 end
