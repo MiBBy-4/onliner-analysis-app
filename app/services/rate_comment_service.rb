@@ -5,15 +5,15 @@ class RateCommentService < ApplicationService
   end
 
   def call
-    response = HTTPX.post(URL, json:{
+    response = HTTPX.post(URL, json:
+    {
       document: {
         language: "en",
         content: @content,
         type: "PLAIN_TEXT"
       },
       encodingType: "NONE"
-      }
-    )
+    })
     data_hash = JSON.parse(response.body)
     document_sentiment = data_hash['documentSentiment']
     document_sentiment['score'].to_f*100
