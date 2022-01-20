@@ -34,4 +34,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/config/analyze_env.rb
+analyze.env
