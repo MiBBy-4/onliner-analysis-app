@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: onliner_analysis_production
-  username: onliner_analysis
-  password: <%= ENV['ONLINER_ANALYSIS_DATABASE_PASSWORD'] %>
+  database: <%= ENV['ONLINER_ANALYSIS_DATABASE_PASSWORD'] %>
+  # username: onliner_analysis
+  # password: <%= ENV['ONLINER_ANALYSIS_DATABASE_PASSWORD'] %>
