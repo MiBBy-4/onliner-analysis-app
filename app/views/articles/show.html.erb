@@ -1,4 +1,22 @@
 <h1 class="text-center mt-2">Analyze <%= @article[:title] %></h1>
-<% @article.comments.each do | comment | %>
-  <%= comment[:content] %>
-<% end %>
+<div class="container">
+  <% @article.comments.each do | comment | %>
+    <% if comment.content != "" %>
+      <div class="row justify-content-md-center mt-5">
+        <div class="col-8">
+          <div class="card text-center shadow mb-5 bg-body rounded">
+            <div class="card-body">
+              <div class="card-text"><%= simple_format(comment.content) %></div>
+            </div>
+            <div class="card-footer text-muted">
+              <small> Mark: <%= comment.rate %>
+              </small>
+            </div>
+        </div>
+        </div>
+      </div>
+  <% end %>
+  
+  
+  <% end %>
+</div>
