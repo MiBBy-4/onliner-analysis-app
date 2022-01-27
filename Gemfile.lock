@@ -89,6 +89,13 @@ GEM
     diff-lcs (1.5.0)
     erubi (1.10.0)
     execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     faraday (0.17.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.15.4)
@@ -214,8 +221,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
-    shoulda-callback-matchers (1.1.4)
-      activesupport (>= 3)
     spring (4.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -263,6 +268,8 @@ DEPENDENCIES
   bootstrap
   byebug
   capybara (>= 3.26)
+  factory_bot_rails
+  faker
   httparty
   httpx
   jbuilder (~> 2.7)
@@ -278,7 +285,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
-  shoulda-callback-matchers (~> 1.1.1)
   spring
   turbolinks (~> 5)
   tzinfo-data
