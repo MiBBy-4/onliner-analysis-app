@@ -19,7 +19,7 @@ RSpec.describe Article, type: :model do
     expect(Article.new(title: 'Test title', link: 'foobar')).to_not be_valid  
   end
   
-  context "test the save_comment method" do
+  context 'test the save_comment method' do
     let(:article_instance) { FactoryBot.build_stubbed(:article) }
     before do
       allow(article_instance).to receive(:transaction_include_any_action?).with([:create]).and_return(true)
