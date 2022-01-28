@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only:[:show]
 
   def index
-    @articles = Article.all()
+    @articles = Article.order(created_at: :desc)
   end
 
   def new
@@ -12,8 +12,7 @@ class ArticlesController < ApplicationController
   def create
     @article = CreateArticleService.call(article_params[:link])
     if @article.save
-      flash[:notice] = "Article found."
-      redirect_to @article
+      flash[:notice] = "redirect_to @article"
     else
       render "new"
     end

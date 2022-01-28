@@ -5,8 +5,7 @@ class Article < ApplicationRecord
   has_many :comments
   after_commit :save_comments, on: :create
 
-  private
-  
+  private 
   def save_comments
     CreateCommentService.call(link, id)
   end
